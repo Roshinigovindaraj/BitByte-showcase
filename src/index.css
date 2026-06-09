@@ -1,0 +1,44 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+  body {
+    font-family: 'Inter', system-ui, sans-serif;
+    @apply bg-white text-gray-900 antialiased;
+  }
+}
+
+@layer utilities {
+  .animation-delay-100 { animation-delay: 100ms; }
+  .animation-delay-200 { animation-delay: 200ms; }
+  .animation-delay-300 { animation-delay: 300ms; }
+  .animation-delay-400 { animation-delay: 400ms; }
+  .animation-delay-500 { animation-delay: 500ms; }
+  .bg-hero { @apply relative; background: linear-gradient(135deg, #1e3a8a, #1e40af, #0ea5e9, #06b6d4); background-size: 400% 400%; animation: heroBg 12s ease infinite; }
+  .bg-hero-pointer { position: absolute; inset: 0; pointer-events: none; background: radial-gradient(circle at var(--bg-x, 50%) var(--bg-y, 50%), rgba(255,255,255,0.15), transparent); mix-blend-mode: screen; }
+  @keyframes heroBg { 0% { background-position: 0% 50%; } 50% { background-position: 100% 50%; } 100% { background-position: 0% 50%; } }
+  .text-gradient { @apply bg-gradient-to-r from-blue-400 to-cyan-400 bg-clip-text text-transparent; }
+  .card-hover { @apply transition-all duration-300 hover:-translate-y-2 hover:shadow-2xl; }
+  .animate-float-slow { animation: floatSlow 20s infinite ease-in-out; }
+  .animate-float-delay { animation: floatDelay 25s infinite ease-in-out; }
+  @keyframes floatSlow {
+    0%, 100% { transform: translate(0, 0) scale(1); }
+    33% { transform: translate(30px, -50px) scale(1.1); }
+    66% { transform: translate(-20px, 20px) scale(0.95); }
+  }
+  @keyframes floatDelay {
+    0%, 100% { transform: translate(0, 0) scale(1); }
+    33% { transform: translate(-40px, 30px) scale(0.9); }
+    66% { transform: translate(25px, -20px) scale(1.1); }
+  }
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar { width: 6px; }
+::-webkit-scrollbar-track { background: #f1f5f9; }
+::-webkit-scrollbar-thumb { background: #1e3a5f; border-radius: 3px; }
+::-webkit-scrollbar-thumb:hover { background: #2563eb; }
