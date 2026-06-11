@@ -135,13 +135,14 @@ export default function Hero() {
 
           {/* ── Left — copy ── */}
           <div className="w-[45%] flex-shrink-0 flex flex-col justify-center py-8 pr-6">
-            {/* Badge */}
-            <div className="inline-flex w-fit items-center gap-1.5 px-3 py-1.5 rounded-full bg-blue-500/10 border border-blue-400/20 text-blue-300 text-xs font-medium mb-4 animate-fade-in min-h-[34px]">
+            {/* Badge — fixed-size pill, only inner text loops */}
+            <div className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-blue-500/10 border border-blue-400/20 text-blue-300 text-xs font-medium mb-4 animate-fade-in overflow-hidden"
+              style={{ width: '260px', minHeight: '34px' }}>
               <span className="w-1.5 h-1.5 rounded-full bg-green-400 animate-pulse flex-shrink-0" />
-              <span className="bg-gradient-to-r from-blue-400 to-green-400 bg-clip-text text-transparent font-bold ml-1">
+              <span className="bg-gradient-to-r from-blue-400 to-green-400 bg-clip-text text-transparent font-bold ml-1 whitespace-nowrap">
                 {typedText}
               </span>
-              <span className="w-[1.5px] h-3 bg-blue-400 ml-1 animate-ping" />
+              <span className="inline-block w-[1.5px] h-3 bg-blue-400 ml-0.5 animate-pulse flex-shrink-0" />
             </div>
 
             <h1 className="text-2xl sm:text-3xl lg:text-4xl font-black text-white leading-snug tracking-tight mb-3 animate-fade-in-up">
@@ -191,7 +192,10 @@ export default function Hero() {
           </div>
 
           {/* ── Right — Interactive 3D Robot ── */}
-          <div className="flex-1 relative -ml-32 md:-ml-56 lg:-ml-72">
+          <div
+            className="flex-1 relative -ml-32 md:-ml-56 lg:-ml-72"
+            style={{ transform: 'translateY(6%)', marginBottom: '-3rem' }}
+          >
             <SplineScene
               scene="https://prod.spline.design/kZDDjO5HuC9GJUM2/scene.splinecode"
               className="w-full h-full"
@@ -200,12 +204,12 @@ export default function Hero() {
 
         </div>
       </div>
-
-      {/* Scroll indicator */}
+{/* 
+      Scroll indicator
       <div className="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 text-gray-600 animate-bounce z-10">
         <span className="text-xs font-medium tracking-widest uppercase">Scroll</span>
         <div className="w-px h-8 bg-gradient-to-b from-gray-600 to-transparent" />
-      </div>
+      </div> */}
     </section>
   )
 }

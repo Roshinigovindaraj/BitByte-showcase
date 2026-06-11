@@ -32,14 +32,14 @@ export default function CTA() {
             {/* Buttons */}
             <div className="flex flex-col sm:flex-row gap-4 justify-center mb-10">
               <a
-                href="mailto:hello@webcraft.studio"
+                href="mailto:reachus@bitbytetech.org"
                 className="group px-8 py-4 bg-gradient-to-r from-blue-400 to-cyan-400 text-navy-950 font-bold rounded-2xl hover:scale-105 transition-all duration-300 shadow-xl shadow-blue-400/30 text-center"
               >
                 Contact Us
                 <span className="ml-2 group-hover:translate-x-1 inline-block transition-transform duration-200">→</span>
               </a>
               <a
-                href="https://calendly.com"
+                href="https://bitbytetech.org/"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="px-8 py-4 border border-white/20 text-white font-bold rounded-2xl hover:bg-white/10 hover:border-white/40 transition-all duration-300 text-center backdrop-blur-sm"
@@ -76,9 +76,9 @@ export default function CTA() {
             </p>
             <ul className="space-y-4">
               {[
-                { icon: '📧', label: 'Email', value: 'hello@webcraft.studio' },
-                { icon: '📞', label: 'Phone', value: '+1 (555) 123-4567' },
-                { icon: '📍', label: 'Location', value: 'Remote — Serving worldwide' },
+                { icon: '📧', label: 'Email', value: 'reachus@bitbytetech.org' },
+                { icon: '📞', label: 'Phone', value: '+91 99437 43136 (Only Whatsapp)' },
+                { icon: '📍', label: 'Location', value: 'BitByte Technologies 2nd Floor, Raja Complex West Wing, Opp:Sago Serve,Omalur Main Road,Salem-636302, Tamil Nadu, India. ' },
               ].map((c) => (
                 <li key={c.label} className="flex items-center gap-3">
                   <span className="w-10 h-10 rounded-xl bg-gray-50 border border-gray-100 flex items-center justify-center text-lg flex-shrink-0">

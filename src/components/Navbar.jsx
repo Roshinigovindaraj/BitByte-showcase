@@ -48,7 +48,7 @@ export default function Navbar() {
           </div>
 
           {/* Company name */}
-          <div className="flex flex-col justify-center leading-none">
+          <div className="flex flex-col justify-center leading-none" style={{ fontFamily: "'Montserrat', sans-serif" }}>
             <span className="font-extrabold text-base sm:text-lg bg-gradient-to-r from-blue-500 to-green-400 bg-clip-text text-transparent tracking-wide">
               Bit Byte
             </span>

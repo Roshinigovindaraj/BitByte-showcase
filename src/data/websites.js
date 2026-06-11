@@ -14,7 +14,7 @@ export const websites = [
     badge: "Popular", badgeColor: "bg-amber-100 text-amber-700",
     accent: "from-amber-400 to-orange-500", previewBg: "from-amber-50 to-orange-50",
     icon: "🛋️", tags: ["E-Commerce", "Product Gallery", "Modern"], color: "bg-amber-500",
-    coverImage: "https://images.unsplash.com/photo-1555041469-a586c61ea9bc?w=700&q=80",
+    coverImage: "assets/fur-out.png",
   },
   {
     id: 2, slug: "restaurant", category: "Restaurant Website",
@@ -22,7 +22,7 @@ export const websites = [
     badge: "Trending", badgeColor: "bg-red-100 text-red-700",
     accent: "from-red-400 to-rose-500", previewBg: "from-red-50 to-rose-50",
     icon: "🍽️", tags: ["Menu", "Reservations", "Food"], color: "bg-red-500",
-    coverImage: "https://images.unsplash.com/photo-1414235077428-338989a2e8c0?w=700&q=80",
+    coverImage: "assets/rest-out.png",
   },
   {
     id: 3, slug: "gym", category: "Gym & Fitness Website",
@@ -30,7 +30,7 @@ export const websites = [
     badge: "New", badgeColor: "bg-green-100 text-green-700",
     accent: "from-green-400 to-emerald-500", previewBg: "from-green-50 to-emerald-50",
     icon: "💪", tags: ["Fitness", "Classes", "Membership"], color: "bg-green-500",
-    coverImage: "https://images.unsplash.com/photo-1534438327276-14e5300c3a48?w=700&q=80",
+    coverImage: "assets/gym-out.png",
   },
   {
     id: 4, slug: "realestate", category: "Real Estate Website",
@@ -38,7 +38,7 @@ export const websites = [
     badge: "Premium", badgeColor: "bg-blue-100 text-blue-700",
     accent: "from-blue-400 to-indigo-500", previewBg: "from-blue-50 to-indigo-50",
     icon: "🏠", tags: ["Listings", "Map Search", "Virtual Tour"], color: "bg-blue-500",
-    coverImage: "https://images.unsplash.com/photo-1560518883-ce09059eeffa?w=700&q=80",
+    coverImage: "assets/real-out.png",
   },
   {
     id: 5, slug: "interior", category: "Interior Design Website",
@@ -46,7 +46,7 @@ export const websites = [
     badge: "Creative", badgeColor: "bg-purple-100 text-purple-700",
     accent: "from-purple-400 to-violet-500", previewBg: "from-purple-50 to-violet-50",
     icon: "🎨", tags: ["Portfolio", "Gallery", "Luxury"], color: "bg-purple-500",
-    coverImage: "https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?w=700&q=80",
+    coverImage: "assets/int-out.png",
   },
   {
     id: 6, slug: "medical", category: "Medical & Clinic Website",
@@ -54,7 +54,7 @@ export const websites = [
     badge: "Trusted", badgeColor: "bg-cyan-100 text-cyan-700",
     accent: "from-cyan-400 to-teal-500", previewBg: "from-cyan-50 to-teal-50",
     icon: "🏥", tags: ["Appointments", "Doctors", "Healthcare"], color: "bg-cyan-500",
-    coverImage: "https://images.unsplash.com/photo-1516549655169-df83a0774514?w=700&q=80",
+    coverImage: "assets/med-out.png",
   },
   {
     id: 7, slug: "ecommerce", category: "E-Commerce Store",
@@ -62,7 +62,7 @@ export const websites = [
     badge: "Best Seller", badgeColor: "bg-pink-100 text-pink-700",
     accent: "from-pink-400 to-rose-500", previewBg: "from-pink-50 to-rose-50",
     icon: "🛒", tags: ["Shopping", "Cart", "Payments"], color: "bg-pink-500",
-    coverImage: "https://images.unsplash.com/photo-1607082348824-0a96f2a4b9da?w=700&q=80",
+    coverImage: "assets/eco-out.png",
   },
 ];
 
@@ -77,8 +77,8 @@ export const categoryDesigns = {
     accent: "from-emerald-400 to-teal-500", color: "text-emerald-600",
     bg: "from-emerald-50 to-teal-50", icon: "🧵",
     designs: [
-      { id:1, name:"Weave Atelier",     style:"Luxury Fabric Showcase",  image:"assets/web-tex-1.png", desc:"Premium layout for textile brands featuring curated collections, material highlights, and elegant lookbooks.",              previewUrl:"https://preview.themeforest.net/item/porto-multipurpose-html5-template/full_screen_preview/4106987",         tags:["Luxury","Lookbook","Collections"],  badge:"Most Popular", badgeColor:"bg-emerald-100 text-emerald-700" },
-      { id:2, name:"Fabric Finder",     style:"Catalog & Filters",       image:"assets/web-tex-2.png", desc:"Advanced filter-driven browsing for fabrics with color swatches, composition tags, and quick quote CTAs.",               previewUrl:"https://preview.themeforest.net/item/martfury-multivendor-marketplace-html-template/full_screen_preview/25476825", tags:["Filters","Swatches","B2B"],         badge:"Trending",     badgeColor:"bg-teal-100 text-teal-700" },
+      { id:1, name:"Weave Atelier",     style:"Luxury Fabric Showcase",  image:"assets/web-tex-1.png", desc:"Premium layout for textile brands featuring curated collections, material highlights, and elegant lookbooks.",              previewUrl:"https://bb-textile-site1.vercel.app/index.html",         tags:["Luxury","Lookbook","Collections"],  badge:"Most Popular", badgeColor:"bg-emerald-100 text-emerald-700" },
+      { id:2, name:"Fabric Finder",     style:"Catalog & Filters",       image:"assets/text-2.png", desc:"Advanced filter-driven browsing for fabrics with color swatches, composition tags, and quick quote CTAs.",               previewUrl:"https://bb-textile-site2.vercel.app/", tags:["Filters","Swatches","B2B"],         badge:"Trending",     badgeColor:"bg-teal-100 text-teal-700" },
       { id:3, name:"Sew & Sell",        style:"E-Commerce Ready",        image:"assets/web-text-3.png", desc:"Store-first textile theme with product gallery, cart flow, and wholesale request options.",                              previewUrl:"https://preview.themeforest.net/item/bacola-grocery-store-and-food-html-template/full_screen_preview/31154999",  tags:["Shop","Wholesale","Cart"],          badge:"Best Seller",  badgeColor:"bg-green-100 text-green-700" },
       { id:4, name:"Pattern Studio",    style:"Artistic Patterns",       image:"https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=600&q=80", desc:"Bold typographic system and pattern-inspired sections perfect for print designers and apparel studios.",               previewUrl:"https://preview.themeforest.net/item/fashe-fashion-html-template/full_screen_preview/20688987",                  tags:["Patterns","Creative","Studio"],    badge:"Creative",     badgeColor:"bg-emerald-100 text-emerald-700" },
       { id:5, name:"Eco Textile",       style:"Sustainable Materials",   image:"https://images.unsplash.com/photo-1606503153255-59d5e417e9d4?w=600&q=80", desc:"Biophilic color palette and impact-first layout for eco-friendly fabrics, certifications, and sourcing stories.",       previewUrl:"https://preview.themeforest.net/item/greenpark-ecology-environment-html-template/full_screen_preview/15741094",   tags:["Eco","Sustainability","Impact"],   badge:"Eco",          badgeColor:"bg-teal-100 text-teal-700" },
