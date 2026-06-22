@@ -32,7 +32,7 @@ export default function Navbar() {
           <img
             src="/assets/BB-Logo.png"
             alt="BitByte Logo"
-            className="h-14 sm:h-16 w-auto object-contain group-hover:scale-105 transition-transform duration-200 drop-shadow-lg"
+            className="h-11 w-auto object-contain group-hover:scale-105 transition-transform duration-200 drop-shadow-lg sm:h-16"
             onError={(e) => {
               // Fallback if image not placed yet
               e.target.style.display = 'none';
@@ -49,10 +49,10 @@ export default function Navbar() {
 
           {/* Company name */}
           <div className="flex flex-col justify-center leading-none" style={{ fontFamily: "'Montserrat', sans-serif" }}>
-            <span className="font-extrabold text-base sm:text-lg bg-gradient-to-r from-blue-500 to-green-400 bg-clip-text text-transparent tracking-wide">
+            <span className="font-extrabold text-sm sm:text-lg bg-gradient-to-r from-blue-500 to-green-400 bg-clip-text text-transparent tracking-wide">
               Bit Byte
             </span>
-            <span className="font-bold text-[9px] sm:text-[11px] text-white uppercase tracking-widest mt-0.5">
+            <span className="font-bold text-[8px] sm:text-[11px] text-white uppercase tracking-widest mt-0.5">
               Technologies
             </span>
           </div>
@@ -102,7 +102,7 @@ export default function Navbar() {
 
       {/* Mobile menu */}
       {menuOpen && (
-        <div className="md:hidden bg-black/95 backdrop-blur-md border-t border-white/10 px-4 py-4">
+        <div className="md:hidden max-h-[calc(100vh-4.5rem)] overflow-y-auto bg-black/95 backdrop-blur-md border-t border-white/10 px-4 py-4">
           {navLinks.map((link) => (
             <a
               key={link.label}

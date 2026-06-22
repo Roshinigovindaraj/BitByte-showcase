@@ -2,14 +2,14 @@ import { steps } from '../data/websites';
 
 export default function Process() {
   return (
-    <section id="process" className="py-24 bg-gray-50 overflow-hidden">
+    <section id="process" className="py-16 sm:py-20 lg:py-24 bg-gray-50 overflow-hidden">
       <div className="max-w-7xl mx-auto px-4 sm:px-6">
         {/* Header */}
-        <div className="text-center mb-16">
+        <div className="text-center mb-10 sm:mb-14 lg:mb-16">
           <span className="inline-block px-4 py-1.5 bg-cyan-50 text-cyan-600 text-sm font-semibold rounded-full mb-4 border border-cyan-100">
             Simple 4-Step Journey
           </span>
-          <h2 className="text-4xl sm:text-5xl font-black text-navy-900 mb-4">
+          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black text-navy-900 mb-4">
             How It{' '}
             <span className="bg-gradient-to-r from-cyan-600 to-blue-500 bg-clip-text text-transparent">
               Works
@@ -26,7 +26,7 @@ export default function Process() {
           {/* Connector line (desktop) */}
           <div className="hidden lg:block absolute top-16 left-[15%] right-[15%] h-0.5 bg-gradient-to-r from-cyan-200 via-blue-200 to-indigo-200"></div>
 
-          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-8">
+          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-8 sm:gap-10 lg:gap-8">
             {steps.map((step, i) => (
               <div
                 key={step.step}

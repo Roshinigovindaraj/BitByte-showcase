@@ -5,14 +5,14 @@ import { categoryDesigns } from '../data/websites';
 function DesignCard({ design, accent, index, onChoose }) {
   return (
     <div
-      className="group bg-white rounded-3xl border border-gray-100 shadow-md hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 overflow-hidden animate-fade-in-up"
+      className="group bg-white rounded-2xl sm:rounded-3xl border border-gray-100 shadow-md hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 overflow-hidden animate-fade-in-up"
       style={{ animationDelay: `${index * 70}ms`, animationFillMode: 'both' }}
     >
       {/* Top accent */}
       <div className={`h-1 w-full bg-gradient-to-r ${accent}`}></div>
 
       {/* Preview image with browser chrome */}
-      <div className="relative bg-gray-100 h-48 overflow-hidden border-b border-gray-100">
+      <div className="relative h-44 overflow-hidden border-b border-gray-100 bg-gray-100 sm:h-48">
 
         {/* Browser top bar */}
         <div className="absolute top-0 left-0 right-0 z-10 bg-white/90 backdrop-blur-sm border-b border-gray-100 px-3 py-2 flex items-center gap-1.5">
@@ -87,7 +87,7 @@ function DesignCard({ design, accent, index, onChoose }) {
         </div>
 
         {/* Buttons */}
-        <div className="flex gap-2">
+        <div className="flex flex-col sm:flex-row gap-2">
           <a
             href={design.previewUrl}
             target="_blank"
@@ -112,7 +112,7 @@ function DesignCard({ design, accent, index, onChoose }) {
 function ChosenModal({ design, category, accent, onClose }) {
   return (
     <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/60 backdrop-blur-sm">
-      <div className="bg-white rounded-3xl p-8 max-w-md w-full shadow-2xl animate-fade-in-up">
+      <div className="bg-white rounded-2xl sm:rounded-3xl p-5 sm:p-8 max-w-md w-full shadow-2xl animate-fade-in-up">
         <div className={`w-16 h-16 rounded-2xl bg-gradient-to-br ${accent} flex items-center justify-center text-3xl mx-auto mb-5`}>
           ✓
         </div>
@@ -127,7 +127,7 @@ function ChosenModal({ design, category, accent, onClose }) {
           Fill out our quick contact form and we'll get back to you within 24 hours
           with a custom proposal based on this design.
         </p>
-        <div className="flex gap-3">
+        <div className="flex flex-col sm:flex-row gap-3">
           <button
             onClick={onClose}
             className="flex-1 py-3 border border-gray-200 text-gray-600 font-semibold rounded-xl hover:bg-gray-50 transition-colors text-sm"
@@ -164,7 +164,7 @@ export default function DesignGallery({ slug, categoryName, onBack }) {
     <div className="min-h-screen bg-gray-50">
       {/* Top bar */}
       <div className="sticky top-0 z-40 bg-white/95 backdrop-blur-md border-b border-gray-100 shadow-sm">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 h-16 flex items-center justify-between gap-4">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 min-h-16 flex items-center justify-between gap-2 py-2 sm:gap-4">
           {/* Back button */}
           <button
             onClick={onBack}
@@ -177,7 +177,7 @@ export default function DesignGallery({ slug, categoryName, onBack }) {
           </button>
 
           {/* Breadcrumb */}
-          <div className="flex items-center gap-2 text-sm text-gray-400">
+          <div className="min-w-0 flex flex-1 items-center justify-center gap-1.5 text-xs text-gray-400 sm:flex-none sm:gap-2 sm:text-sm">
             <span
               className="hover:text-blue-600 cursor-pointer transition-colors"
               onClick={onBack}
@@ -185,7 +185,7 @@ export default function DesignGallery({ slug, categoryName, onBack }) {
               Home
             </span>
             <span>/</span>
-            <span className="text-gray-700 font-semibold truncate max-w-[160px] sm:max-w-none">
+            <span className="text-gray-700 font-semibold truncate max-w-[130px] sm:max-w-none">
               {data.icon} {categoryName}
             </span>
           </div>
@@ -202,19 +202,19 @@ export default function DesignGallery({ slug, categoryName, onBack }) {
       </div>
 
       {/* Hero header */}
-      <div className={`bg-gradient-to-br from-navy-950 to-indigo-950 py-16 px-4 sm:px-6 text-center`}>
+      <div className={`bg-gradient-to-br from-navy-950 to-indigo-950 py-12 sm:py-16 px-4 sm:px-6 text-center`}>
         <div className="max-w-3xl mx-auto">
-          <div className="text-5xl mb-4">{data.icon}</div>
-          <div className={`inline-block px-4 py-1.5 rounded-full bg-white/10 border border-white/10 text-sm font-semibold text-white/70 mb-4`}>
+          <div className="text-4xl sm:text-5xl mb-4">{data.icon}</div>
+          <div className={`inline-block max-w-full px-4 py-1.5 rounded-full bg-white/10 border border-white/10 text-xs sm:text-sm font-semibold text-white/70 mb-4`}>
             7 Design Variants Available
           </div>
-          <h1 className="text-4xl sm:text-5xl font-black text-white mb-4">
+          <h1 className="text-3xl sm:text-4xl lg:text-5xl font-black text-white mb-4">
             {categoryName}{' '}
             <span className={`bg-gradient-to-r ${data.accent} bg-clip-text text-transparent`}>
               Designs
             </span>
           </h1>
-          <p className="text-gray-400 text-lg max-w-xl mx-auto">
+          <p className="text-gray-400 text-sm sm:text-lg max-w-xl mx-auto">
             Browse all 7 design styles below. Click <strong className="text-white">Live Preview</strong> to
             open the real demo, then <strong className="text-white">Choose This</strong> when you find the one.
           </p>
@@ -222,19 +222,19 @@ export default function DesignGallery({ slug, categoryName, onBack }) {
       </div>
 
       {/* Designs grid */}
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 py-14">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 py-10 sm:py-14">
         {/* Count + info */}
         <div className="flex flex-col sm:flex-row items-center justify-between gap-4 mb-10">
           <p className="text-gray-500 text-sm">
             Showing <strong className="text-gray-800">{data.designs.length} designs</strong> for {categoryName}
           </p>
-          <div className="flex items-center gap-2 bg-amber-50 border border-amber-100 rounded-xl px-4 py-2.5 text-xs text-amber-700 font-medium">
+          <div className="flex w-full items-start gap-2 bg-amber-50 border border-amber-100 rounded-xl px-4 py-2.5 text-xs text-amber-700 font-medium sm:w-auto">
             <span>💡</span>
             All designs open in a new tab · 100% customizable for your brand
           </div>
         </div>
 
-        <div className="grid sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+        <div className="grid sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-5 sm:gap-6">
           {data.designs.map((design, i) => (
             <DesignCard
               key={design.id}

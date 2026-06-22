@@ -5,10 +5,18 @@
 @layer base {
   html {
     scroll-behavior: smooth;
+    overflow-x: hidden;
   }
   body {
     font-family: 'Inter', system-ui, sans-serif;
     @apply bg-white text-gray-900 antialiased;
+    overflow-x: hidden;
+  }
+  img, canvas, svg, video {
+    max-width: 100%;
+  }
+  a, button, p, h1, h2, h3, h4, span, li {
+    overflow-wrap: anywhere;
   }
 }
 

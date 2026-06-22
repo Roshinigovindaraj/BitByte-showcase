@@ -3,7 +3,7 @@ import { websites } from '../data/websites';
 function CategoryCard({ site, index, onViewDesigns }) {
   return (
     <div
-      className="group relative bg-white rounded-3xl border border-gray-100 shadow-lg hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 overflow-hidden cursor-pointer animate-fade-in-up"
+      className="group relative bg-white rounded-2xl sm:rounded-3xl border border-gray-100 shadow-lg hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 overflow-hidden cursor-pointer animate-fade-in-up"
       style={{ animationDelay: `${index * 80}ms`, animationFillMode: 'both' }}
       onClick={() => onViewDesigns(site)}
     >
@@ -11,7 +11,7 @@ function CategoryCard({ site, index, onViewDesigns }) {
       <div className={`h-1 w-full bg-gradient-to-r ${site.accent}`}></div>
 
       {/* Preview area */}
-      <div className="relative h-52 overflow-hidden bg-gray-100">
+      <div className="relative h-44 sm:h-52 overflow-hidden bg-gray-100">
         {/* Browser bar */}
         <div className="absolute top-0 left-0 right-0 z-10 bg-white/90 backdrop-blur-sm border-b border-gray-100 px-3 py-2 flex items-center gap-1.5">
           <div className="w-2 h-2 rounded-full bg-red-400 flex-shrink-0"></div>
@@ -50,7 +50,7 @@ function CategoryCard({ site, index, onViewDesigns }) {
       </div>
 
       {/* Card body */}
-      <div className="p-6">
+      <div className="p-5 sm:p-6">
         <div className="flex items-center justify-between mb-3">
           <span className={`inline-flex items-center gap-1 px-3 py-1 rounded-full text-xs font-bold ${site.badgeColor}`}>
             {site.badge}
@@ -75,7 +75,7 @@ function CategoryCard({ site, index, onViewDesigns }) {
         </div>
 
         {/* Action row */}
-        <div className="flex gap-3">
+        <div className="flex flex-col sm:flex-row gap-3">
           <button
             onClick={(e) => { e.stopPropagation(); onViewDesigns(site); }}
             className={`flex-1 py-2.5 text-center text-sm font-semibold text-white bg-gradient-to-r ${site.accent} rounded-xl hover:opacity-90 hover:scale-105 transition-all duration-200 shadow-md`}
@@ -97,14 +97,14 @@ function CategoryCard({ site, index, onViewDesigns }) {
 
 export default function Showcase({ onViewDesigns }) {
   return (
-    <section id="showcase" className="py-24 bg-gray-50">
+    <section id="showcase" className="py-16 sm:py-20 lg:py-24 bg-gray-50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6">
         {/* Section header */}
-        <div className="text-center mb-16">
+        <div className="text-center mb-10 sm:mb-14 lg:mb-16">
           <span className="inline-block px-4 py-1.5 bg-blue-50 text-blue-600 text-sm font-semibold rounded-full mb-4 border border-blue-100">
             7 Designs Per Category
           </span>
-          <h2 className="text-4xl sm:text-5xl font-black text-navy-900 mb-4">
+          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black text-navy-900 mb-4">
             Website Design{' '}
             <span className="bg-gradient-to-r from-blue-600 to-cyan-500 bg-clip-text text-transparent">
               Showcase
@@ -139,7 +139,7 @@ export default function Showcase({ onViewDesigns }) {
         </div>
 
         {/* Category cards grid */}
-        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-7">
+        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-5 sm:gap-7">
           {websites.map((site, i) => (
             <CategoryCard
               key={site.id}

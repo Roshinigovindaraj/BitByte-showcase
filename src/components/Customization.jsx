@@ -2,14 +2,14 @@ import { features } from '../data/websites';
 
 export default function Customization() {
   return (
-    <section id="customization" className="py-24 bg-white">
+    <section id="customization" className="py-16 sm:py-20 lg:py-24 bg-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6">
         {/* Section header */}
-        <div className="text-center mb-16">
+        <div className="text-center mb-10 sm:mb-14 lg:mb-16">
           <span className="inline-block px-4 py-1.5 bg-indigo-50 text-indigo-600 text-sm font-semibold rounded-full mb-4 border border-indigo-100">
             Tailored Just for You
           </span>
-          <h2 className="text-4xl sm:text-5xl font-black text-navy-900 mb-4">
+          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black text-navy-900 mb-4">
             We Also Offer{' '}
             <span className="bg-gradient-to-r from-indigo-600 to-blue-500 bg-clip-text text-transparent">
               Full Customization
@@ -22,7 +22,7 @@ export default function Customization() {
         </div>
 
         {/* Features grid */}
-        <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6 mb-20">
+        <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6 mb-12 sm:mb-16 lg:mb-20">
           {features.map((f, i) => (
             <div
               key={f.title}
@@ -42,7 +42,7 @@ export default function Customization() {
         </div>
 
         {/* Bottom comparison block */}
-        <div className="bg-gradient-to-br from-navy-950 to-indigo-950 rounded-3xl p-8 sm:p-12 text-white overflow-hidden relative">
+        <div className="bg-gradient-to-br from-navy-950 to-indigo-950 rounded-2xl sm:rounded-3xl p-8 sm:p-12 text-white overflow-hidden relative">
           {/* Decorative blobs */}
           <div className="absolute -top-20 -right-20 w-64 h-64 bg-blue-500/10 rounded-full blur-3xl pointer-events-none"></div>
           <div className="absolute -bottom-20 -left-20 w-64 h-64 bg-cyan-500/10 rounded-full blur-3xl pointer-events-none"></div>
