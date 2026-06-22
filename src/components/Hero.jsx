@@ -4,6 +4,7 @@ import { SplineScene } from './ui/SplineScene'
 export default function Hero() {
   const glowRef = useRef(null)
   const sectionRef = useRef(null)
+  const robotRef = useRef(null)
   const [typedText, setTypedText] = useState('')
 
   const phrases = [
@@ -55,7 +56,8 @@ export default function Hero() {
   useEffect(() => {
     const section = sectionRef.current
     const glow = glowRef.current
-    if (!section || !glow) return
+    const robot = robotRef.current
+    if (!section || !glow || !robot) return
 
     let rafId
     const getStartPoint = () => ({
@@ -67,6 +69,8 @@ export default function Hero() {
     let targetY = startPoint.y
     let currentX = targetX
     let currentY = targetY
+    const hasHover = window.matchMedia('(hover: hover) and (pointer: fine)').matches
+    glow.style.opacity = hasHover ? '1' : '0'
 
     // Smooth lerp loop
     const lerp = (a, b, t) => a + (b - a) * t
@@ -87,6 +91,15 @@ export default function Hero() {
       section.style.setProperty('--bg-y', `${targetY}px`);
     }
 
+    const onRobotPointerMove = (e) => {
+      if (e.pointerType === 'mouse') return
+      onMouseMove(e)
+      glow.style.opacity = '1'
+    }
+    const hideTouchGlow = (e) => {
+      if (e.pointerType !== 'mouse') glow.style.opacity = '0'
+    }
+
     const onResize = () => {
       const nextPoint = getStartPoint()
       targetX = nextPoint.x
@@ -94,11 +107,19 @@ export default function Hero() {
     }
 
     section.addEventListener('mousemove', onMouseMove)
+    robot.addEventListener('pointerdown', onRobotPointerMove, true)
+    robot.addEventListener('pointermove', onRobotPointerMove, true)
+    robot.addEventListener('pointerup', hideTouchGlow, true)
+    robot.addEventListener('pointercancel', hideTouchGlow, true)
     window.addEventListener('resize', onResize)
     rafId = requestAnimationFrame(animate)
 
     return () => {
       section.removeEventListener('mousemove', onMouseMove)
+      robot.removeEventListener('pointerdown', onRobotPointerMove, true)
+      robot.removeEventListener('pointermove', onRobotPointerMove, true)
+      robot.removeEventListener('pointerup', hideTouchGlow, true)
+      robot.removeEventListener('pointercancel', hideTouchGlow, true)
       window.removeEventListener('resize', onResize)
       cancelAnimationFrame(rafId)
     }
@@ -126,6 +147,7 @@ export default function Hero() {
             'radial-gradient(circle, rgba(255,255,255,0.85) 0%, rgba(255,255,255,0.3) 40%, rgba(255,255,255,0.05) 70%, transparent 100%)',
           willChange: 'transform',
           mixBlendMode: 'screen',
+          transition: 'opacity 180ms ease',
         }}
       />
 
@@ -206,6 +228,7 @@ export default function Hero() {
 
           {/* ── Right — Interactive 3D Robot ── */}
           <div
+            ref={robotRef}
             className="relative mx-auto mt-6 h-[clamp(220px,38vh,320px)] w-full max-w-[520px] overflow-visible sm:h-[clamp(320px,42vh,460px)] sm:max-w-[680px] lg:mx-0 lg:mt-0 lg:h-[min(78vh,720px)] lg:max-w-none lg:flex-1 lg:-ml-40 xl:-ml-56 2xl:-ml-72"
             style={{ transform: 'translateY(clamp(0px, 2vh, 18px))' }}
           >
