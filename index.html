@@ -13,5 +13,70 @@
   <body>
     <div id="root"></div>
     <script type="module" src="/src/main.jsx"></script>
+
+    <!-- ── Privacy Protection ── -->
+    <script>
+      (function () {
+        // Disable right-click context menu
+        document.addEventListener('contextmenu', function (e) {
+          e.preventDefault();
+        });
+
+        // Block keyboard shortcuts used for copying, screenshotting, devtools, etc.
+        document.addEventListener('keydown', function (e) {
+          var key = e.key;
+          var ctrl = e.ctrlKey || e.metaKey; // Ctrl on Win/Linux, Cmd on Mac
+
+          // PrintScreen
+          if (key === 'PrintScreen') {
+            e.preventDefault();
+            return false;
+          }
+
+          if (ctrl) {
+            // Ctrl+C (copy), Ctrl+A (select all), Ctrl+X (cut)
+            if (key === 'c' || key === 'C' || key === 'a' || key === 'A' || key === 'x' || key === 'X') {
+              e.preventDefault();
+              return false;
+            }
+            // Ctrl+S (save page), Ctrl+U (view source), Ctrl+P (print/screenshot)
+            if (key === 's' || key === 'S' || key === 'u' || key === 'U' || key === 'p' || key === 'P') {
+              e.preventDefault();
+              return false;
+            }
+            // Ctrl+Shift+I / Ctrl+Shift+J / Ctrl+Shift+C (DevTools)
+            if (e.shiftKey && (key === 'I' || key === 'i' || key === 'J' || key === 'j' || key === 'C' || key === 'c')) {
+              e.preventDefault();
+              return false;
+            }
+          }
+
+          // F12 (DevTools)
+          if (key === 'F12') {
+            e.preventDefault();
+            return false;
+          }
+        });
+
+        // Disable drag-and-drop of images
+        document.addEventListener('dragstart', function (e) {
+          if (e.target.tagName === 'IMG') {
+            e.preventDefault();
+          }
+        });
+
+        // Clear clipboard on copy attempt (belt-and-suspenders)
+        document.addEventListener('copy', function (e) {
+          e.clipboardData.setData('text/plain', '');
+          e.preventDefault();
+        });
+
+        // Clear clipboard on cut attempt
+        document.addEventListener('cut', function (e) {
+          e.clipboardData.setData('text/plain', '');
+          e.preventDefault();
+        });
+      })();
+    </script>
   </body>
 </html>

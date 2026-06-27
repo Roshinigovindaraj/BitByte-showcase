@@ -125,6 +125,8 @@ export default function CTA() {
               defaultValue=""
             >
               <option value="" disabled>Select a Design Template</option>
+              <option>Textile Website</option>
+              <option>Photoshop Website</option>
               <option>Furniture Website</option>
               <option>Restaurant Website</option>
               <option>Gym &amp; Fitness Website</option>

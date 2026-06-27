@@ -3,6 +3,7 @@ import { useState, useEffect } from 'react';
 export default function Navbar() {
   const [scrolled, setScrolled] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
+  const [showcaseOpen, setShowcaseOpen] = useState(false);
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 20);
@@ -10,13 +11,58 @@ export default function Navbar() {
     return () => window.removeEventListener('scroll', onScroll);
   }, []);
 
+  useEffect(() => {
+    const handleClickOutside = (event) => {
+      if (!event.target.closest('[data-showcase-menu]')) {
+        setShowcaseOpen(false);
+      }
+    };
+
+    document.addEventListener('click', handleClickOutside);
+    return () => document.removeEventListener('click', handleClickOutside);
+  }, []);
+
   const navLinks = [
     { label: 'Home', href: '#home' },
-    { label: 'Showcase', href: '#showcase' },
+    { label: 'Showcase', href: '#showcase', hasDropdown: true },
     { label: 'Customization', href: '#customization' },
     { label: 'Process', href: '#process' },
     { label: 'Contact', href: '#contact' },
   ];
+
+  const showcaseLinks = [
+    {
+      label: 'Website Showcase',
+      href: '#showcase',
+      description: 'Browse premium website design categories',
+    },
+    {
+      label: 'Digital Market Showcase',
+      href: '#digital-market-showcase',
+      description: 'Explore marketplace and digital commerce concepts',
+    },
+  ];
+
+  const handleShowcaseLinkClick = (event, item) => {
+    if (item.label !== 'Digital Market Showcase') {
+      setShowcaseOpen(false);
+      setMenuOpen(false);
+      return;
+    }
+
+    event.preventDefault();
+
+    const url = new URL(window.location.href);
+    url.searchParams.set('from', 'navbar');
+    url.hash = 'digital-market-showcase';
+
+    window.history.pushState({}, '', `${url.pathname}${url.search}${url.hash}`);
+    document.getElementById('digital-market-showcase')?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    window.dispatchEvent(new Event('locationchange'));
+
+    setShowcaseOpen(false);
+    setMenuOpen(false);
+  };
 
   return (
     <header
@@ -34,12 +80,10 @@ export default function Navbar() {
             alt="BitByte Logo"
             className="h-11 w-auto object-contain group-hover:scale-105 transition-transform duration-200 drop-shadow-lg sm:h-16"
             onError={(e) => {
-              // Fallback if image not placed yet
               e.target.style.display = 'none';
               e.target.nextSibling.style.display = 'flex';
             }}
           />
-          {/* Fallback icon shown only if logo.png is missing */}
           <div
             style={{ display: 'none' }}
             className="w-9 h-9 rounded-xl bg-gradient-to-br from-blue-500 to-green-400 items-center justify-center shadow-lg"
@@ -47,7 +91,6 @@ export default function Navbar() {
             <span className="text-white font-black text-base">B</span>
           </div>
 
-          {/* Company name */}
           <div className="flex flex-col justify-center leading-none" style={{ fontFamily: "'Montserrat', sans-serif" }}>
             <span className="font-extrabold text-sm sm:text-lg bg-gradient-to-r from-blue-500 to-green-400 bg-clip-text text-transparent tracking-wide">
               Bit Byte
@@ -61,13 +104,43 @@ export default function Navbar() {
         {/* Desktop Links */}
         <ul className="hidden md:flex items-center gap-1">
           {navLinks.map((link) => (
-            <li key={link.label}>
-              <a
-                href={link.href}
-                className="px-4 py-2 text-sm font-medium text-gray-300 hover:text-white hover:bg-white/10 rounded-lg transition-all duration-200"
-              >
-                {link.label}
-              </a>
+            <li key={link.label} className="relative" data-showcase-menu>
+              {link.hasDropdown ? (
+                <>
+                  <button
+                    type="button"
+                    className="px-4 py-2 text-sm font-medium text-gray-300 hover:text-white hover:bg-white/10 rounded-lg transition-all duration-200 flex items-center gap-1"
+                    onClick={() => setShowcaseOpen((prev) => !prev)}
+                    aria-expanded={showcaseOpen}
+                  >
+                    {link.label}
+                    <span className={`text-xs transition-transform duration-200 ${showcaseOpen ? 'rotate-180' : ''}`}>▾</span>
+                  </button>
+
+                  {showcaseOpen && (
+                    <div className="absolute left-0 top-full mt-2 w-72 rounded-2xl border border-white/10 bg-black/95 p-2 shadow-2xl shadow-black/30">
+                      {showcaseLinks.map((item) => (
+                        <a
+                          key={item.label}
+                          href={item.href}
+                          className="block rounded-xl px-3 py-2.5 text-sm text-gray-200 hover:bg-white/10 hover:text-white"
+                          onClick={(event) => handleShowcaseLinkClick(event, item)}
+                        >
+                          <span className="block font-semibold">{item.label}</span>
+                          <span className="mt-1 block text-xs text-gray-400">{item.description}</span>
+                        </a>
+                      ))}
+                    </div>
+                  )}
+                </>
+              ) : (
+                <a
+                  href={link.href}
+                  className="px-4 py-2 text-sm font-medium text-gray-300 hover:text-white hover:bg-white/10 rounded-lg transition-all duration-200"
+                >
+                  {link.label}
+                </a>
+              )}
             </li>
           ))}
         </ul>
@@ -104,14 +177,41 @@ export default function Navbar() {
       {menuOpen && (
         <div className="md:hidden max-h-[calc(100vh-4.5rem)] overflow-y-auto bg-black/95 backdrop-blur-md border-t border-white/10 px-4 py-4">
           {navLinks.map((link) => (
-            <a
-              key={link.label}
-              href={link.href}
-              className="block py-3 text-gray-300 hover:text-white font-medium border-b border-white/5"
-              onClick={() => setMenuOpen(false)}
-            >
-              {link.label}
-            </a>
+            link.hasDropdown ? (
+              <div key={link.label} className="border-b border-white/5 py-2">
+                <button
+                  type="button"
+                  className="flex w-full items-center justify-between py-3 text-left text-gray-300 hover:text-white font-medium"
+                  onClick={() => setShowcaseOpen((prev) => !prev)}
+                >
+                  <span>{link.label}</span>
+                  <span className={`text-xs transition-transform duration-200 ${showcaseOpen ? 'rotate-180' : ''}`}>▾</span>
+                </button>
+                {showcaseOpen && (
+                  <div className="space-y-2 pb-2 pl-3">
+                    {showcaseLinks.map((item) => (
+                      <a
+                        key={item.label}
+                        href={item.href}
+                        className="block rounded-xl px-3 py-2 text-sm text-gray-400 hover:text-white"
+                        onClick={(event) => handleShowcaseLinkClick(event, item)}
+                      >
+                        {item.label}
+                      </a>
+                    ))}
+                  </div>
+                )}
+              </div>
+            ) : (
+              <a
+                key={link.label}
+                href={link.href}
+                className="block py-3 text-gray-300 hover:text-white font-medium border-b border-white/5"
+                onClick={() => setMenuOpen(false)}
+              >
+                {link.label}
+              </a>
+            )
           ))}
           <a
             href="#showcase"

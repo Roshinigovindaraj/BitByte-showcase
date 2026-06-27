@@ -33,6 +33,30 @@
   .card-hover { @apply transition-all duration-300 hover:-translate-y-2 hover:shadow-2xl; }
   .animate-float-slow { animation: floatSlow 20s infinite ease-in-out; }
   .animate-float-delay { animation: floatDelay 25s infinite ease-in-out; }
+  .showcase-container { min-height: 420px; display: grid; place-items: center; padding: 2rem 1rem; position: relative; overflow: hidden; background: radial-gradient(circle at top, rgba(59,130,246,0.18), transparent 45%), linear-gradient(135deg, #030712, #0f172a 45%, #111827); border-radius: 1.5rem; isolation: isolate; }
+  .showcase-stage-glow { position: absolute; border-radius: 9999px; filter: blur(90px); opacity: 0.35; pointer-events: none; }
+  .showcase-stage-glow-a { top: -60px; left: -40px; width: 250px; height: 250px; background: rgba(56,189,248,0.35); }
+  .showcase-stage-glow-b { bottom: -80px; right: -60px; width: 280px; height: 280px; background: rgba(129,140,248,0.35); }
+  .showcase-stage-grid { position: absolute; inset: 0; background-image: linear-gradient(rgba(255,255,255,0.04) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.04) 1px, transparent 1px); background-size: 32px 32px; mask-image: linear-gradient(180deg, rgba(0,0,0,0.65), transparent); pointer-events: none; }
+  .showcase-card, .showcase-access-card { position: relative; z-index: 100000; width: min(100%, 28rem); border: 1px solid rgba(255,255,255,0.1); background: rgba(2,6,23,0.78); box-shadow: 0 20px 80px rgba(2,6,23,0.45); backdrop-filter: blur(16px); border-radius: 1.5rem; padding: 2rem; }
+  .showcase-btn-primary { display: inline-flex; align-items: center; justify-content: center; border-radius: 9999px; background: linear-gradient(90deg, #3b82f6, #06b6d4); color: white; font-weight: 700; letter-spacing: 0.08em; transition: transform 0.2s ease, box-shadow 0.2s ease; box-shadow: 0 0 0 1px rgba(255,255,255,0.1) inset; }
+  .showcase-btn-primary:hover { transform: translateY(-1px); box-shadow: 0 20px 40px rgba(6,182,212,0.2); }
+  .showcase-access-input-wrap { position: relative; }
+  .showcase-access-input { width: 100%; border-radius: 9999px; border: 1px solid rgba(255,255,255,0.14); background: rgba(255,255,255,0.06); padding: 0.95rem 1.1rem; color: white; outline: none; transition: border-color 0.2s ease, box-shadow 0.2s ease; }
+  .showcase-access-input::placeholder { color: rgba(226,232,240,0.55); }
+  .showcase-access-input:focus { border-color: rgba(34,211,238,0.8); box-shadow: 0 0 0 4px rgba(34,211,238,0.16); }
+  .showcase-access-btn-verify { width: 100%; border-radius: 9999px; background: linear-gradient(90deg, #38bdf8, #818cf8); color: white; font-weight: 800; padding: 0.95rem 1rem; transition: transform 0.2s ease, box-shadow 0.2s ease; }
+  .showcase-access-btn-verify:hover { transform: translateY(-1px); box-shadow: 0 20px 35px rgba(56,189,248,0.18); }
+  .showcase-spinner { width: 3.5rem; height: 3.5rem; border-radius: 9999px; border: 3px solid rgba(255,255,255,0.15); border-top-color: #38bdf8; animation: spin 1s linear infinite; }
+  .showcase-button-wrap { display: inline-flex; align-items: center; justify-content: center; position: relative; padding: 1.2rem; }
+  .showcase-button-ring { position: absolute; inset: 0; border-radius: 9999px; border: 1px solid rgba(56,189,248,0.3); }
+  .showcase-button-ring-1 { inset: -0.35rem; }
+  .showcase-button-ring-2 { inset: -0.8rem; }
+  .showcase-button-shimmer { position: absolute; inset: -1.1rem; border-radius: 9999px; border: 1px dashed rgba(255,255,255,0.18); }
+  .showcase-cta-button { background: linear-gradient(90deg, #3b82f6, #06b6d4); min-width: 220px; justify-content: center; }
+  .showcase-cta-button-bg { position: absolute; inset: 0; background: linear-gradient(90deg, rgba(255,255,255,0.08), rgba(255,255,255,0.02)); }
+  .canva-embed-frame { position: relative; }
+  .canva-embed-iframe { min-height: 100vh; }
   @keyframes floatSlow {
     0%, 100% { transform: translate(0, 0) scale(1); }
     33% { transform: translate(30px, -50px) scale(1.1); }
@@ -43,8 +67,47 @@
     33% { transform: translate(-40px, 30px) scale(0.9); }
     66% { transform: translate(25px, -20px) scale(1.1); }
   }
+  @keyframes spin {
+    to { transform: rotate(360deg); }
+  }
 }
 
+/* ── Watermark overlay removed. */
+body::after,
+body::before {
+  content: none;
+  display: none;
+}
+
+/* ── Privacy: disable text selection & image drag ── */
+* {
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+/* Allow selection inside form inputs and textareas so users can fill them */
+input, textarea, select {
+  -webkit-user-select: text;
+  -moz-user-select: text;
+  -ms-user-select: text;
+  user-select: text;
+}
+
+/* Prevent images from being dragged out */
+img {
+  -webkit-user-drag: none;
+  user-drag: none;
+  pointer-events: none;
+}
+
+/* Restore pointer events on interactive elements that contain images */
+a img, button img {
+  pointer-events: auto;
+}
+
+/* ── Custom scrollbar ── */
 /* Custom scrollbar */
 ::-webkit-scrollbar { width: 6px; }
 ::-webkit-scrollbar-track { background: #f1f5f9; }

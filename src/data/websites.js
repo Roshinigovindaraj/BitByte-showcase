@@ -9,7 +9,15 @@ export const websites = [
     coverImage: "assets/web-tex-1.png",
   },
   {
-    id: 1, slug: "furniture", category: "Furniture Website",
+    id: 1, slug: "photoshop", category: "Photoshop Website",
+    description: "Creative Photoshop website showcase for designers with portfolio layouts, mockup galleries, and branding visuals.",
+    badge: "Creative", badgeColor: "bg-violet-100 text-violet-700",
+    accent: "from-violet-400 to-fuchsia-500", previewBg: "from-violet-50 to-fuchsia-50",
+    icon: "🎨", tags: ["Mockups", "Portfolio", "Branding"], color: "bg-violet-500",
+    coverImage: "assets/photo-cover.png",
+  },
+  {
+    id: 2, slug: "furniture", category: "Furniture Website",
     description: "Elegant showcase for furniture brands with product galleries, room inspiration, and seamless e-commerce integration.",
     badge: "Popular", badgeColor: "bg-amber-100 text-amber-700",
     accent: "from-amber-400 to-orange-500", previewBg: "from-amber-50 to-orange-50",
@@ -30,7 +38,7 @@ export const websites = [
     badge: "New", badgeColor: "bg-green-100 text-green-700",
     accent: "from-green-400 to-emerald-500", previewBg: "from-green-50 to-emerald-50",
     icon: "💪", tags: ["Fitness", "Classes", "Membership"], color: "bg-green-500",
-    coverImage: "assets/gym-out.png",
+    coverImage: "assets/test-img.png",
   },
   {
     id: 4, slug: "realestate", category: "Real Estate Website",
@@ -38,7 +46,7 @@ export const websites = [
     badge: "Premium", badgeColor: "bg-blue-100 text-blue-700",
     accent: "from-blue-400 to-indigo-500", previewBg: "from-blue-50 to-indigo-50",
     icon: "🏠", tags: ["Listings", "Map Search", "Virtual Tour"], color: "bg-blue-500",
-    coverImage: "assets/real-out.png",
+    coverImage: "assets/test-img1.png",
   },
   {
     id: 5, slug: "interior", category: "Interior Design Website",
@@ -46,7 +54,7 @@ export const websites = [
     badge: "Creative", badgeColor: "bg-purple-100 text-purple-700",
     accent: "from-purple-400 to-violet-500", previewBg: "from-purple-50 to-violet-50",
     icon: "🎨", tags: ["Portfolio", "Gallery", "Luxury"], color: "bg-purple-500",
-    coverImage: "assets/int-out.png",
+    coverImage: "assets/test-img3.png",
   },
   {
     id: 6, slug: "medical", category: "Medical & Clinic Website",
@@ -54,7 +62,7 @@ export const websites = [
     badge: "Trusted", badgeColor: "bg-cyan-100 text-cyan-700",
     accent: "from-cyan-400 to-teal-500", previewBg: "from-cyan-50 to-teal-50",
     icon: "🏥", tags: ["Appointments", "Doctors", "Healthcare"], color: "bg-cyan-500",
-    coverImage: "assets/med-out.png",
+    coverImage: "assets/test8.png",
   },
   {
     id: 7, slug: "ecommerce", category: "E-Commerce Store",
@@ -62,7 +70,7 @@ export const websites = [
     badge: "Best Seller", badgeColor: "bg-pink-100 text-pink-700",
     accent: "from-pink-400 to-rose-500", previewBg: "from-pink-50 to-rose-50",
     icon: "🛒", tags: ["Shopping", "Cart", "Payments"], color: "bg-pink-500",
-    coverImage: "assets/eco-out.png",
+    coverImage: "assets/fur-out.png",
   },
 ];
 
@@ -87,12 +95,27 @@ export const categoryDesigns = {
     ],
   },
 
+  // ── PHOTOSHOP ──────────────────────────────────────────────────────────────
+  photoshop: {
+    accent: "from-violet-400 to-fuchsia-500", color: "text-violet-600",
+    bg: "from-violet-50 to-fuchsia-50", icon: "🎨",
+    designs: [
+      { id:1, name:"Studio Canvas",      style:"Portfolio Showcase",    image:"assets/photo-web.png", desc:"Modern portfolio layout for creative studios with hero mockups, case studies, and client galleries.", previewUrl:"https://photoshop-web-eta.vercel.app/", tags:["Portfolio","Mockups","Branding"], badge:"Creative", badgeColor:"bg-violet-100 text-violet-700" },
+      { id:2, name:"Mockup Lab",        style:"Design Presentation",   image:"https://images.unsplash.com/photo-1518770660439-4636190af475?w=600&q=80", desc:"Clean presentation site for designers to share brand assets, mockups, and creative workflows.", previewUrl:"https://preview.themeforest.net/item/werkstatt-portfolio-theme/full_screen_preview/22809857", tags:["Mockups","Studio","Creative"], badge:"Trend", badgeColor:"bg-pink-100 text-pink-700" },
+      { id:3, name:"Brand Studio",      style:"Visual Identity",      image:"https://images.unsplash.com/photo-1496317899792-9d7dbcd928a1?w=600&q=80", desc:"Visual identity-focused design with case study sections, service highlights, and branding showcases.", previewUrl:"https://preview.themeforest.net/item/salient-responsive-multipurpose-theme/full_screen_preview/4363266", tags:["Branding","Identity","Case Study"], badge:"Premium", badgeColor:"bg-violet-100 text-violet-700" },
+      { id:4, name:"Creative Deck",     style:"Agency Pitch",         image:"https://images.unsplash.com/photo-1498050108023-c5249f4df085?w=600&q=80", desc:"Pitch-ready layout for agencies with service decks, pricing tables, and client testimonial sections.", previewUrl:"https://preview.themeforest.net/item/thegem-creative-multipurpose-theme/full_screen_preview/16061685", tags:["Agency","Pitch","Presentation"], badge:"Popular", badgeColor:"bg-fuchsia-100 text-fuchsia-700" },
+      { id:5, name:"Asset Gallery",     style:"Brand Asset Hub",      image:"https://images.unsplash.com/photo-1521737604893-d14cc237f11d?w=600&q=80", desc:"A polished gallery to display logos, brand sheets, mood boards, and downloadable design assets.", previewUrl:"https://preview.themeforest.net/item/pofo-creative-portfolio-template/full_screen_preview/20458875", tags:["Gallery","Assets","Download"], badge:"Gallery", badgeColor:"bg-violet-100 text-violet-700" },
+      { id:6, name:"Freelance Pro",     style:"Designer Landing",      image:"https://images.unsplash.com/photo-1515378791036-0648a3ef77b2?w=600&q=80", desc:"Landing page design for freelance creatives with service highlights, testimonials, and contact CTAs.", previewUrl:"https://preview.themeforest.net/item/uncode-creative-multipurpose-theme/full_screen_preview/20432134", tags:["Landing","Freelance","Services"], badge:"Freelance", badgeColor:"bg-pink-100 text-pink-700" },
+      { id:7, name:"Creative Grid",     style:"Project Showcase",      image:"https://images.unsplash.com/photo-1498050108023-c5249f4df085?w=600&q=80", desc:"Grid-based project showcase for agencies and freelancers with bold thumbnails and narrative storytelling.", previewUrl:"https://preview.themeforest.net/item/soho-creative-portfolio/full_screen_preview/20942624", tags:["Projects","Showcase","Story"], badge:"New", badgeColor:"bg-violet-100 text-violet-700" },
+    ],
+  },
+
   // ── FURNITURE ──────────────────────────────────────────────────────────────
   furniture: {
     accent: "from-amber-400 to-orange-500", color: "text-amber-600",
     bg: "from-amber-50 to-orange-50", icon: "🛋️",
     designs: [
-      { id:1, name:"Luxe Living",    style:"Minimalist Luxury",    image:"https://images.unsplash.com/photo-1555041469-a586c61ea9bc?w=600&q=80", desc:"Clean white space, large product imagery, and subtle gold accents perfect for premium furniture brands.", previewUrl:"https://preview.themeforest.net/item/furnitur-furniture-store-html-template/full_screen_preview/23887648", tags:["Minimalist","Luxury","E-Shop"],        badge:"Most Popular", badgeColor:"bg-amber-100 text-amber-700" },
+      { id:1, name:"Luxe Living",    style:"Minimalist Luxury",    image:"assets/fur-web.png", desc:"Clean white space, large product imagery, and subtle gold accents perfect for premium furniture brands.", previewUrl:"https://furniture-web-dev-cenk.vercel.app/", tags:["Minimalist","Luxury","E-Shop"],        badge:"Most Popular", badgeColor:"bg-amber-100 text-amber-700" },
       { id:2, name:"Nordic Home",    style:"Scandinavian Style",   image:"https://images.unsplash.com/photo-1493663284031-b7e3aefcae8e?w=600&q=80", desc:"Warm neutrals, clean grid layouts, and a cozy Scandinavian aesthetic for modern home brands.",           previewUrl:"https://preview.themeforest.net/item/homestyle-furniture-store-html-template/full_screen_preview/24130933", tags:["Nordic","Warm","Lifestyle"],          badge:"Trending",    badgeColor:"bg-orange-100 text-orange-700" },
       { id:3, name:"Urban Loft",     style:"Industrial Modern",    image:"https://images.unsplash.com/photo-1524758631624-e2822e304c36?w=600&q=80", desc:"Dark backgrounds, bold typography, and industrial textures for urban furniture collections.",              previewUrl:"https://preview.themeforest.net/item/woodmart-woocommerce-wordpress-theme/full_screen_preview/20264492", tags:["Dark Theme","Bold","Urban"],           badge:"New",         badgeColor:"bg-gray-100 text-gray-700" },
       { id:4, name:"Casa Bella",     style:"Italian Elegance",     image:"https://images.unsplash.com/photo-1567016376408-0226e4d0c1ea?w=600&q=80", desc:"Sophisticated serif typography, rich earth tones, and editorial-style photography layouts.",               previewUrl:"https://preview.themeforest.net/item/glamo-furniture-store-html-template/full_screen_preview/26556523", tags:["Elegant","Editorial","Premium"],      badge:"Premium",     badgeColor:"bg-amber-100 text-amber-700" },
@@ -137,7 +160,7 @@ export const categoryDesigns = {
     accent: "from-blue-400 to-indigo-500", color: "text-blue-600",
     bg: "from-blue-50 to-indigo-50", icon: "🏠",
     designs: [
-      { id:1, name:"Estate Pro",    style:"Full Agency Platform",      image:"https://images.unsplash.com/photo-1560518883-ce09059eeffa?w=600&q=80", desc:"Complete agency website with advanced property search, map view, agent profiles, and lead capture.",  previewUrl:"https://preview.themeforest.net/item/homez-real-estate-html-template/full_screen_preview/28580695", tags:["Agency","Search","Leads"],         badge:"Most Popular", badgeColor:"bg-blue-100 text-blue-700" },
+      { id:1, name:"Estate Pro",    style:"Full Agency Platform",      image:"https://images.unsplash.com/photo-1560518883-ce09059eeffa?w=600&q=80", desc:"Agency website with advanced property search, map view, agent profiles, and lead capture.",  previewUrl:"https://preview.themeforest.net/item/homez-real-estate-html-template/full_screen_preview/28580695", tags:["Agency","Search","Leads"],         badge:"Most Popular", badgeColor:"bg-blue-100 text-blue-700" },
       { id:2, name:"Luxury Homes",  style:"Luxury Real Estate",        image:"https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?w=600&q=80", desc:"Dark prestige design for luxury property sales with cinematic full-screen video backgrounds.",        previewUrl:"https://preview.themeforest.net/item/reales-real-estate-html-template/full_screen_preview/11895553", tags:["Luxury","Premium","Video"],         badge:"Premium",      badgeColor:"bg-indigo-100 text-indigo-700" },
       { id:3, name:"RentEasy",      style:"Rental Platform",           image:"https://images.unsplash.com/photo-1522708323590-d24dbb6b0267?w=600&q=80", desc:"Clean rental-focused layout with filters, pricing tables, and tenant application forms.",            previewUrl:"https://preview.themeforest.net/item/findhouse-real-estate-html-template/full_screen_preview/21561648", tags:["Rental","Filters","Applications"],  badge:"Rental",       badgeColor:"bg-cyan-100 text-cyan-700" },
       { id:4, name:"PropList",      style:"Property Listing Portal",   image:"https://images.unsplash.com/photo-1568605114967-8130f3a36994?w=600&q=80", desc:"Portal-style design with advanced filters, grid/list toggle, and property comparison feature.",      previewUrl:"https://preview.themeforest.net/item/listeo-directory-listings-with-booking-html-template/full_screen_preview/23239920", tags:["Portal","Listings","Compare"],      badge:"Feature Rich",  badgeColor:"bg-blue-100 text-blue-700" },
@@ -167,7 +190,7 @@ export const categoryDesigns = {
     accent: "from-cyan-400 to-teal-500", color: "text-cyan-600",
     bg: "from-cyan-50 to-teal-50", icon: "🏥",
     designs: [
-      { id:1, name:"MediCare Pro",     style:"Full Hospital Portal",     image:"https://images.unsplash.com/photo-1516549655169-df83a0774514?w=600&q=80", desc:"Complete hospital website with department pages, doctor search, appointment booking, and patient portal.", previewUrl:"https://preview.themeforest.net/item/medilab-medical-health-html5-template/full_screen_preview/24185472", tags:["Hospital","Portal","Booking"],    badge:"Most Popular", badgeColor:"bg-cyan-100 text-cyan-700" },
+      { id:1, name:"MediCare Pro",     style:"Full Hospital Portal",     image:"https://images.unsplash.com/photo-1516549655169-df83a0774514?w=600&q=80", desc:"Hospital website with department pages, doctor search, appointment booking, and patient portal.", previewUrl:"https://preview.themeforest.net/item/medilab-medical-health-html5-template/full_screen_preview/24185472", tags:["Hospital","Portal","Booking"],    badge:"Most Popular", badgeColor:"bg-cyan-100 text-cyan-700" },
       { id:2, name:"Dental Smile",     style:"Dental Clinic",            image:"https://images.unsplash.com/photo-1588776814546-1ffcf47267a5?w=600&q=80", desc:"Bright, friendly design for dental clinics with service showcases, before/after gallery, and booking.", previewUrl:"https://preview.themeforest.net/item/dentiste-dental-clinic-html-template/full_screen_preview/20462061", tags:["Dental","Friendly","Gallery"],   badge:"Dental",       badgeColor:"bg-blue-100 text-blue-700" },
       { id:3, name:"Clinic Plus",      style:"General Practice",         image:"https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?w=600&q=80", desc:"Trustworthy design for GP clinics and private practices with online appointment and patient records.", previewUrl:"https://preview.themeforest.net/item/health-and-medical-html-template/full_screen_preview/10606698", tags:["GP","Appointments","Trust"],     badge:"Trusted",      badgeColor:"bg-teal-100 text-teal-700" },
       { id:4, name:"Pharma Web",       style:"Pharmacy & Drug Store",    image:"https://images.unsplash.com/photo-1587854692152-cbe660dbde88?w=600&q=80", desc:"Clean pharmacy website with product catalog, prescription upload, and health blog integration.",        previewUrl:"https://preview.themeforest.net/item/pharma-medical-health-html-template/full_screen_preview/20539116", tags:["Pharmacy","Products","Blog"],    badge:"Pharmacy",     badgeColor:"bg-green-100 text-green-700" },
@@ -182,7 +205,7 @@ export const categoryDesigns = {
     accent: "from-pink-400 to-rose-500", color: "text-pink-600",
     bg: "from-pink-50 to-rose-50", icon: "🛒",
     designs: [
-      { id:1, name:"Shop Master",      style:"Full E-Commerce",          image:"https://images.unsplash.com/photo-1607082348824-0a96f2a4b9da?w=600&q=80", desc:"Feature-complete online store with product filtering, wishlist, cart, checkout, and order tracking.", previewUrl:"https://preview.themeforest.net/item/bacola-grocery-store-and-food-html-template/full_screen_preview/31154999", tags:["Full Store","Cart","Tracking"],   badge:"Best Seller", badgeColor:"bg-pink-100 text-pink-700" },
+      { id:1, name:"Shop Master",      style:"Full E-Commerce",          image:"https://images.unsplash.com/photo-1607082348824-0a96f2a4b9da?w=600&q=80", desc:"Feature-rich online store with product filtering, wishlist, cart, checkout, and order tracking.", previewUrl:"https://preview.themeforest.net/item/bacola-grocery-store-and-food-html-template/full_screen_preview/31154999", tags:["Full Store","Cart","Tracking"],   badge:"Best Seller", badgeColor:"bg-pink-100 text-pink-700" },
       { id:2, name:"Fashion Boutique", style:"Fashion & Apparel",        image:"https://images.unsplash.com/photo-1441986300917-64674bd600d8?w=600&q=80", desc:"Editorial fashion store with lookbook pages, size guide, outfit builder, and influencer collab pages.", previewUrl:"https://preview.themeforest.net/item/fashe-fashion-html-template/full_screen_preview/20688987", tags:["Fashion","Lookbook","Apparel"],  badge:"Trending",   badgeColor:"bg-rose-100 text-rose-700" },
       { id:3, name:"TechStore",        style:"Electronics & Gadgets",    image:"https://images.unsplash.com/photo-1468495244123-6c6c332eeece?w=600&q=80", desc:"Tech-focused store with product comparison, spec sheets, video reviews, and bundle offers.",         previewUrl:"https://preview.themeforest.net/item/electro-electronics-store-html-template/full_screen_preview/9909195", tags:["Electronics","Tech","Compare"],  badge:"Tech",       badgeColor:"bg-blue-100 text-blue-700" },
       { id:4, name:"Beauty Bar",       style:"Beauty & Cosmetics",       image:"https://images.unsplash.com/photo-1522335789203-aabd1fc54bc9?w=600&q=80", desc:"Elegant beauty store with shade finder, skin quiz, subscription boxes, and loyalty rewards.",        previewUrl:"https://preview.themeforest.net/item/beautify-cosmetics-shop-html5-template/full_screen_preview/22488558", tags:["Beauty","Cosmetics","Subscription"], badge:"Glamour", badgeColor:"bg-fuchsia-100 text-fuchsia-700" },
