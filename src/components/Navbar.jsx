@@ -156,7 +156,7 @@ export default function Navbar() {
         <div className="md:hidden max-h-[calc(100vh-4.5rem)] overflow-y-auto bg-black/95 backdrop-blur-md border-t border-white/10 px-4 py-4">
           {navLinks.map((link) => (
             link.hasDropdown ? (
-              <div key={link.label} className="border-b border-white/5 py-2">
+              <div key={link.label} className="border-b border-white/5 py-2" data-showcase-menu>
                 <button
                   type="button"
                   className="flex w-full items-center justify-between py-3 text-left text-gray-300 hover:text-white font-medium"
