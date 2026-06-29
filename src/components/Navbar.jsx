@@ -178,7 +178,11 @@ export default function Navbar() {
                         key={item.label}
                         href={item.href}
                         className="block rounded-xl px-3 py-2 text-sm text-gray-400 hover:text-white"
-                        onClick={closeMenus}
+                        onClick={(e) => {
+                          e.preventDefault();
+                          navigate(item.href);
+                          closeMenus();
+                        }}
                       >
                         {item.label}
                       </a>

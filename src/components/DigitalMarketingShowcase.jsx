@@ -331,7 +331,7 @@ export default function DigitalMarketingShowcase() {
               >
                 <span className="showcase-cta-button-bg" />
                 <Sparkles className="relative z-10 shrink-0" size={16} />
-                <span className="relative z-10">Click Showcase</span>
+                <span className="relative z-10">Digital Marketing</span>
                 <FileText className="relative z-10 shrink-0 opacity-80 transition group-hover:opacity-100" size={16} />
               </motion.button>
             </div>
