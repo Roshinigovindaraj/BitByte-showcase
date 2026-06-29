@@ -2,7 +2,7 @@ import { AnimatePresence, motion } from 'framer-motion';
 import { FileText, Sparkles, X, Lock, ShieldAlert, ExternalLink } from 'lucide-react';
 import { useEffect, useState } from 'react';
 
-const CANVA_SHOWCASE_URL = 'https://www.canva.com/design/DAHKXndWpBA/kHHf-YXFc7gfFcxmtbbpUQ/view';
+const CANVA_SHOWCASE_URL = 'https://www.canva.com/design/DAHMKgej5XA/87Dvn3r-OGEWya7Uw8iiHg/view/';
 
 export default function DigitalMarketingShowcase() {
   const [viewerOpen, setViewerOpen] = useState(false);

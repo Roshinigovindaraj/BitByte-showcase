@@ -83,7 +83,7 @@ function CategoryCard({ site, index, onViewDesigns }) {
             View 7 Designs →
           </button>
           <a
-            href="#contact"
+            href="/#contact"
             onClick={(e) => e.stopPropagation()}
             className="flex-1 py-2.5 text-center text-sm font-semibold text-gray-700 bg-gray-50 border border-gray-200 rounded-xl hover:bg-gray-100 hover:border-gray-300 transition-all duration-200"
           >
@@ -97,42 +97,47 @@ function CategoryCard({ site, index, onViewDesigns }) {
 
 export default function Showcase({ onViewDesigns }) {
   return (
-    <section id="showcase" className="py-16 sm:py-20 lg:py-24 bg-gray-50">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6">
+    <section
+      id="showcase"
+      className="relative overflow-hidden bg-[linear-gradient(135deg,#071225_0%,#0e2a47_42%,#0b6b7d_100%)] py-28 sm:py-32 lg:py-36"
+    >
+      <div className="absolute inset-0 bg-[linear-gradient(90deg,rgba(255,255,255,0.045)_1px,transparent_1px),linear-gradient(rgba(255,255,255,0.045)_1px,transparent_1px)] bg-[size:56px_56px] opacity-60" />
+      <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(255,255,255,0.1)_0%,rgba(255,255,255,0)_38%,rgba(5,12,24,0.28)_100%)]" />
+      <div className="relative max-w-7xl mx-auto px-4 sm:px-6">
         {/* Section header */}
         <div className="text-center mb-10 sm:mb-14 lg:mb-16">
-          <span className="inline-block px-4 py-1.5 bg-blue-50 text-blue-600 text-sm font-semibold rounded-full mb-4 border border-blue-100">
+          <span className="inline-block px-4 py-1.5 bg-white/10 text-cyan-100 text-sm font-semibold rounded-full mb-4 border border-white/15 backdrop-blur">
             7 Designs Per Category
           </span>
-          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black text-navy-900 mb-4">
+          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black text-white mb-4">
             Website Design{' '}
-            <span className="bg-gradient-to-r from-blue-600 to-cyan-500 bg-clip-text text-transparent">
+            <span className="bg-gradient-to-r from-sky-300 to-emerald-300 bg-clip-text text-transparent">
               Showcase
             </span>
           </h2>
-          <p className="text-lg text-gray-500 max-w-2xl mx-auto">
+          <p className="text-lg text-slate-200 max-w-2xl mx-auto">
             Click any category to explore{' '}
-            <strong className="text-gray-700">7 different design styles</strong> with live previews.
+            <strong className="text-white">7 different design styles</strong> with live previews.
             Pick the one that fits your brand.
           </p>
         </div>
 
         {/* Info banner */}
-        <div className="bg-gradient-to-r from-navy-900 to-indigo-900 rounded-2xl p-5 mb-12 flex flex-col sm:flex-row items-center gap-4 text-white shadow-xl">
-          <div className="flex-shrink-0 w-10 h-10 bg-blue-400/20 rounded-xl flex items-center justify-center text-xl">
+        <div className="bg-white/10 rounded-2xl p-5 mb-12 flex flex-col sm:flex-row items-center gap-4 text-white shadow-2xl shadow-slate-950/20 border border-white/15 backdrop-blur-md">
+          <div className="flex-shrink-0 w-10 h-10 bg-cyan-300/15 rounded-xl flex items-center justify-center text-xl">
             💡
           </div>
           <div className="flex-1 text-center sm:text-left">
             <p className="font-semibold text-sm sm:text-base">
               Each category has 7 curated design variants to choose from.
             </p>
-            <p className="text-blue-200 text-xs sm:text-sm mt-0.5">
+            <p className="text-cyan-100 text-xs sm:text-sm mt-0.5">
               Click a category card → browse 7 designs → pick your favourite → come back any time.
             </p>
           </div>
           <a
-            href="#contact"
-            className="flex-shrink-0 px-5 py-2.5 bg-gradient-to-r from-blue-400 to-cyan-400 text-navy-900 font-bold rounded-xl text-sm hover:opacity-90 transition-opacity"
+            href="/#contact"
+            className="flex-shrink-0 px-5 py-2.5 bg-gradient-to-r from-sky-300 to-emerald-300 text-navy-900 font-bold rounded-xl text-sm hover:opacity-90 transition-opacity shadow-lg shadow-cyan-950/20"
           >
             Get Free Quote →
           </a>

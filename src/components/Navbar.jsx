@@ -23,43 +23,27 @@ export default function Navbar() {
   }, []);
 
   const navLinks = [
-    { label: 'Home', href: '#home' },
-    { label: 'Showcase', href: '#showcase', hasDropdown: true },
-    { label: 'Customization', href: '#customization' },
-    { label: 'Process', href: '#process' },
-    { label: 'Contact', href: '#contact' },
+    { label: 'Home', href: '/' },
+    { label: 'Showcase', href: '/website-showcase', hasDropdown: true },
+    { label: 'Customization', href: '/#customization' },
+    { label: 'Process', href: '/#process' },
+    { label: 'Contact', href: '/#contact' },
   ];
 
   const showcaseLinks = [
     {
       label: 'Website Showcase',
-      href: '#showcase',
+      href: '/website-showcase',
       description: 'Browse premium website design categories',
     },
     {
       label: 'Digital Market Showcase',
-      href: '#digital-market-showcase',
+      href: '/digital-market-showcase?from=navbar',
       description: 'Explore marketplace and digital commerce concepts',
     },
   ];
 
-  const handleShowcaseLinkClick = (event, item) => {
-    if (item.label !== 'Digital Market Showcase') {
-      setShowcaseOpen(false);
-      setMenuOpen(false);
-      return;
-    }
-
-    event.preventDefault();
-
-    const url = new URL(window.location.href);
-    url.searchParams.set('from', 'navbar');
-    url.hash = 'digital-market-showcase';
-
-    window.history.pushState({}, '', `${url.pathname}${url.search}${url.hash}`);
-    document.getElementById('digital-market-showcase')?.scrollIntoView({ behavior: 'smooth', block: 'start' });
-    window.dispatchEvent(new Event('locationchange'));
-
+  const closeMenus = () => {
     setShowcaseOpen(false);
     setMenuOpen(false);
   };
@@ -72,9 +56,7 @@ export default function Navbar() {
         }`}
     >
       <nav className="max-w-7xl mx-auto px-4 sm:px-6 flex items-center justify-between">
-
-        {/* ── Logo ── */}
-        <a href="#home" className="flex items-center gap-2 group">
+        <a href="/" className="flex items-center gap-2 group">
           <img
             src="/assets/BB-Logo.png"
             alt="BitByte Logo"
@@ -101,7 +83,6 @@ export default function Navbar() {
           </div>
         </a>
 
-        {/* Desktop Links */}
         <ul className="hidden md:flex items-center gap-1">
           {navLinks.map((link) => (
             <li key={link.label} className="relative" data-showcase-menu>
@@ -114,7 +95,7 @@ export default function Navbar() {
                     aria-expanded={showcaseOpen}
                   >
                     {link.label}
-                    <span className={`text-xs transition-transform duration-200 ${showcaseOpen ? 'rotate-180' : ''}`}>▾</span>
+                    <span className={`text-xs transition-transform duration-200 ${showcaseOpen ? 'rotate-180' : ''}`}>v</span>
                   </button>
 
                   {showcaseOpen && (
@@ -124,7 +105,7 @@ export default function Navbar() {
                           key={item.label}
                           href={item.href}
                           className="block rounded-xl px-3 py-2.5 text-sm text-gray-200 hover:bg-white/10 hover:text-white"
-                          onClick={(event) => handleShowcaseLinkClick(event, item)}
+                          onClick={closeMenus}
                         >
                           <span className="block font-semibold">{item.label}</span>
                           <span className="mt-1 block text-xs text-gray-400">{item.description}</span>
@@ -145,23 +126,21 @@ export default function Navbar() {
           ))}
         </ul>
 
-        {/* CTA buttons */}
         <div className="hidden md:flex items-center gap-3">
           <a
-            href="#contact"
+            href="/#contact"
             className="px-5 py-2 text-sm font-semibold text-white border border-white/20 rounded-xl hover:bg-white/10 transition-all duration-200"
           >
             Contact
           </a>
           <a
-            href="#showcase"
+            href="/website-showcase"
             className="px-5 py-2 text-sm font-semibold text-black bg-gradient-to-r from-blue-400 to-green-400 rounded-xl hover:opacity-90 hover:scale-105 transition-all duration-200 shadow-lg shadow-blue-500/20"
           >
             View Designs
           </a>
         </div>
 
-        {/* Mobile toggle */}
         <button
           className="md:hidden p-2 text-white"
           onClick={() => setMenuOpen(!menuOpen)}
@@ -173,7 +152,6 @@ export default function Navbar() {
         </button>
       </nav>
 
-      {/* Mobile menu */}
       {menuOpen && (
         <div className="md:hidden max-h-[calc(100vh-4.5rem)] overflow-y-auto bg-black/95 backdrop-blur-md border-t border-white/10 px-4 py-4">
           {navLinks.map((link) => (
@@ -185,7 +163,7 @@ export default function Navbar() {
                   onClick={() => setShowcaseOpen((prev) => !prev)}
                 >
                   <span>{link.label}</span>
-                  <span className={`text-xs transition-transform duration-200 ${showcaseOpen ? 'rotate-180' : ''}`}>▾</span>
+                  <span className={`text-xs transition-transform duration-200 ${showcaseOpen ? 'rotate-180' : ''}`}>v</span>
                 </button>
                 {showcaseOpen && (
                   <div className="space-y-2 pb-2 pl-3">
@@ -194,7 +172,7 @@ export default function Navbar() {
                         key={item.label}
                         href={item.href}
                         className="block rounded-xl px-3 py-2 text-sm text-gray-400 hover:text-white"
-                        onClick={(event) => handleShowcaseLinkClick(event, item)}
+                        onClick={closeMenus}
                       >
                         {item.label}
                       </a>
@@ -214,11 +192,11 @@ export default function Navbar() {
             )
           ))}
           <a
-            href="#showcase"
+            href="/website-showcase"
             className="block mt-4 text-center py-3 font-bold text-black bg-gradient-to-r from-blue-400 to-green-400 rounded-xl"
             onClick={() => setMenuOpen(false)}
           >
-            View Designs →
+            View Designs {'->'}
           </a>
         </div>
       )}

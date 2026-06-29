@@ -120,22 +120,24 @@ export default function CTA() {
               placeholder="Business / Project Name"
               className="w-full px-4 py-3 bg-gray-50 border border-gray-200 rounded-xl text-sm focus:outline-none focus:border-blue-400 focus:ring-2 focus:ring-blue-100 transition-all"
             />
-            <select
-              className="w-full px-4 py-3 bg-gray-50 border border-gray-200 rounded-xl text-sm text-gray-500 focus:outline-none focus:border-blue-400 focus:ring-2 focus:ring-blue-100 transition-all"
-              defaultValue=""
-            >
-              <option value="" disabled>Select a Design Template</option>
-              <option>Textile Website</option>
-              <option>Photoshop Website</option>
-              <option>Furniture Website</option>
-              <option>Restaurant Website</option>
-              <option>Gym &amp; Fitness Website</option>
-              <option>Real Estate Website</option>
-              <option>Interior Design Website</option>
-              <option>Medical &amp; Clinic Website</option>
-              <option>E-Commerce Store</option>
-              <option>Custom Design</option>
-            </select>
+            <div className="relative w-full">
+              <select
+                className="custom-select w-full pr-12 pl-4 py-3 bg-gray-50 border border-gray-200 rounded-xl text-sm text-gray-500 focus:outline-none focus:border-blue-400 focus:ring-2 focus:ring-blue-100 transition-all"
+                defaultValue=""
+              >
+                <option value="" disabled>Select a Design Template</option>
+                <option>Textile Website</option>
+                <option>Photoshop Website</option>
+                <option>Furniture Website</option>
+                <option>Restaurant Website</option>
+                <option>Gym &amp; Fitness Website</option>
+                <option>Real Estate Website</option>
+                <option>Interior Design Website</option>
+                <option>Medical &amp; Clinic Website</option>
+                <option>E-Commerce Store</option>
+                <option>Custom Design</option>
+              </select>
+            </div>
             <textarea
               rows={4}
               placeholder="Tell us about your project and requirements..."

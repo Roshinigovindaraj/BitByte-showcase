@@ -211,14 +211,14 @@ export default function Hero() {
             {/* CTAs */}
             <div className="flex w-full max-w-sm flex-col sm:flex-row gap-3 animate-fade-in-up animation-delay-300 lg:max-w-none">
               <a
-                href="#showcase"
+                href="/website-showcase"
                 className="group px-5 py-3 text-sm bg-gradient-to-r from-blue-500 to-cyan-500 text-white font-bold rounded-xl shadow-lg shadow-blue-500/30 hover:shadow-blue-500/50 hover:scale-105 transition-all duration-300 text-center"
               >
                 View Designs
                 <span className="inline-block ml-1.5 group-hover:translate-x-1 transition-transform duration-200">→</span>
               </a>
               <a
-                href="#contact"
+                href="/#contact"
                 className="px-5 py-3 text-sm bg-white/5 border border-white/15 text-white font-bold rounded-xl hover:bg-white/10 hover:border-white/30 transition-all duration-300 text-center backdrop-blur-sm"
               >
                 Get Free Quote

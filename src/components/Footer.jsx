@@ -1,3 +1,5 @@
+import { X, Linkedin, Facebook, Instagram } from 'lucide-react';
+
 export default function Footer() {
   const year = new Date().getFullYear();
 
@@ -36,13 +38,21 @@ export default function Footer() {
             </p>
             {/* Social */}
             <div className="flex gap-3">
-              {['𝕏', 'in', 'f', '▶'].map((s, i) => (
+              {[
+                { Icon: X, href: 'https://twitter.com', label: 'X' },
+                { Icon: Linkedin, href: 'https://www.linkedin.com', label: 'LinkedIn' },
+                { Icon: Facebook, href: 'https://www.facebook.com', label: 'Facebook' },
+                { Icon: Instagram, href: 'https://www.instagram.com', label: 'Instagram' },
+              ].map(({ Icon, href, label }) => (
                 <a
-                  key={i}
-                  href="#"
-                  className="w-9 h-9 rounded-xl bg-white/5 border border-white/10 flex items-center justify-center text-xs hover:bg-white/10 hover:border-white/20 transition-all duration-200"
+                  key={label}
+                  href={href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label={label}
+                  className="w-10 h-10 rounded-2xl bg-white/5 border border-white/10 flex items-center justify-center text-white transition-all duration-200 hover:-translate-y-1 hover:scale-110 hover:bg-white/15 hover:border-white/20 shadow-sm shadow-slate-900/10"
                 >
-                  {s}
+                  <Icon className="h-4 w-4" />
                 </a>
               ))}
             </div>
