@@ -213,6 +213,7 @@ export default function Hero() {
               <a
                 href="/website-showcase"
                 className="group px-5 py-3 text-sm bg-gradient-to-r from-blue-500 to-cyan-500 text-white font-bold rounded-xl shadow-lg shadow-blue-500/30 hover:shadow-blue-500/50 hover:scale-105 transition-all duration-300 text-center"
+                onClick={(e) => { e.preventDefault(); import('../utils/navigate').then(m => m.navigate('/website-showcase')); }}
               >
                 View Designs
                 <span className="inline-block ml-1.5 group-hover:translate-x-1 transition-transform duration-200">→</span>

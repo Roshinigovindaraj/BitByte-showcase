@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react';
+import { navigate } from '../utils/navigate';
 
 export default function Navbar() {
   const [scrolled, setScrolled] = useState(false);
@@ -105,7 +106,11 @@ export default function Navbar() {
                           key={item.label}
                           href={item.href}
                           className="block rounded-xl px-3 py-2.5 text-sm text-gray-200 hover:bg-white/10 hover:text-white"
-                          onClick={closeMenus}
+                          onClick={(e) => {
+                            e.preventDefault();
+                            navigate(item.href);
+                            closeMenus();
+                          }}
                         >
                           <span className="block font-semibold">{item.label}</span>
                           <span className="mt-1 block text-xs text-gray-400">{item.description}</span>
@@ -136,6 +141,7 @@ export default function Navbar() {
           <a
             href="/website-showcase"
             className="px-5 py-2 text-sm font-semibold text-black bg-gradient-to-r from-blue-400 to-green-400 rounded-xl hover:opacity-90 hover:scale-105 transition-all duration-200 shadow-lg shadow-blue-500/20"
+            onClick={(e) => { e.preventDefault(); navigate('/website-showcase'); }}
           >
             View Designs
           </a>
@@ -191,13 +197,13 @@ export default function Navbar() {
               </a>
             )
           ))}
-          <a
-            href="/website-showcase"
-            className="block mt-4 text-center py-3 font-bold text-black bg-gradient-to-r from-blue-400 to-green-400 rounded-xl"
-            onClick={() => setMenuOpen(false)}
-          >
-            View Designs {'->'}
-          </a>
+            <a
+              href="/website-showcase"
+              className="block mt-4 text-center py-3 font-bold text-black bg-gradient-to-r from-blue-400 to-green-400 rounded-xl"
+              onClick={(e) => { e.preventDefault(); navigate('/website-showcase'); setMenuOpen(false); }}
+            >
+              View Designs {'->'}
+            </a>
         </div>
       )}
     </header>
