@@ -25,7 +25,23 @@ export const websites = [
     coverImage: "assets/fur-out.png",
   },
   {
-    id: 2, slug: "restaurant", category: "Restaurant Website",
+    id: 3, slug: "billing", category: "Billing Software Website",
+    description: "Professional billing system showcase with invoice workflows, payment tracking, reports, and business dashboards.",
+    badge: "Business", badgeColor: "bg-sky-100 text-sky-700",
+    accent: "from-sky-400 to-blue-500", previewBg: "from-sky-50 to-blue-50",
+    icon: "🧾", tags: ["Invoices", "Payments", "Reports"], color: "bg-sky-500",
+    coverImage: "assets/test11.png",
+  },
+  {
+    id: 4, slug: "hrms", category: "HRMS Website",
+    description: "Modern HRMS platform showcase with employee records, attendance, payroll, leave management, and analytics.",
+    badge: "Productive", badgeColor: "bg-indigo-100 text-indigo-700",
+    accent: "from-indigo-400 to-cyan-500", previewBg: "from-indigo-50 to-cyan-50",
+    icon: "👥", tags: ["Payroll", "Attendance", "Employees"], color: "bg-indigo-500",
+    coverImage: "assets/test10.png",
+  },
+  {
+    id: 5, slug: "restaurant", category: "Restaurant Website",
     description: "Appetizing design for restaurants featuring online menus, table reservations, and mouthwatering food photography.",
     badge: "Trending", badgeColor: "bg-red-100 text-red-700",
     accent: "from-red-400 to-rose-500", previewBg: "from-red-50 to-rose-50",
@@ -33,7 +49,7 @@ export const websites = [
     coverImage: "assets/rest-out.png",
   },
   {
-    id: 3, slug: "gym", category: "Gym & Fitness Website",
+    id: 6, slug: "gym", category: "Gym & Fitness Website",
     description: "High-energy design for gyms and fitness studios with class schedules, trainer profiles, and membership plans.",
     badge: "New", badgeColor: "bg-green-100 text-green-700",
     accent: "from-green-400 to-emerald-500", previewBg: "from-green-50 to-emerald-50",
@@ -41,7 +57,7 @@ export const websites = [
     coverImage: "assets/test-img.png",
   },
   {
-    id: 4, slug: "realestate", category: "Real Estate Website",
+    id: 7, slug: "realestate", category: "Real Estate Website",
     description: "Sophisticated platform for real estate agencies with property listings, map search, virtual tours and lead capture.",
     badge: "Premium", badgeColor: "bg-blue-100 text-blue-700",
     accent: "from-blue-400 to-indigo-500", previewBg: "from-blue-50 to-indigo-50",
@@ -49,7 +65,7 @@ export const websites = [
     coverImage: "assets/test-img1.png",
   },
   {
-    id: 5, slug: "interior", category: "Interior Design Website",
+    id: 8, slug: "interior", category: "Interior Design Website",
     description: "Visually stunning portfolio for interior designers with project showcases, mood boards, and client consultations.",
     badge: "Creative", badgeColor: "bg-purple-100 text-purple-700",
     accent: "from-purple-400 to-violet-500", previewBg: "from-purple-50 to-violet-50",
@@ -57,7 +73,7 @@ export const websites = [
     coverImage: "assets/test-img3.png",
   },
   {
-    id: 6, slug: "medical", category: "Medical & Clinic Website",
+    id: 9, slug: "medical", category: "Medical & Clinic Website",
     description: "Clean, trustworthy design for clinics and hospitals with appointment booking, doctor profiles, and patient portal.",
     badge: "Trusted", badgeColor: "bg-cyan-100 text-cyan-700",
     accent: "from-cyan-400 to-teal-500", previewBg: "from-cyan-50 to-teal-50",
@@ -65,7 +81,7 @@ export const websites = [
     coverImage: "assets/test8.png",
   },
   {
-    id: 7, slug: "ecommerce", category: "E-Commerce Store",
+    id: 10, slug: "ecommerce", category: "E-Commerce Store",
     description: "Full-featured online store with product catalog, cart, wishlist, checkout flow, and inventory management.",
     badge: "Best Seller", badgeColor: "bg-pink-100 text-pink-700",
     accent: "from-pink-400 to-rose-500", previewBg: "from-pink-50 to-rose-50",
@@ -122,6 +138,37 @@ export const categoryDesigns = {
       { id:5, name:"Eco Wood",       style:"Natural & Organic",    image:"https://images.unsplash.com/photo-1506439773649-6e0eb8cfb237?w=600&q=80", desc:"Nature-inspired palette, wood textures, and sustainable brand storytelling for eco furniture.",            previewUrl:"https://preview.themeforest.net/item/furnio-furniture-store-html-template/full_screen_preview/29115811", tags:["Eco","Natural","Sustainable"],        badge:"Green",       badgeColor:"bg-green-100 text-green-700" },
       { id:6, name:"Artisan Craft",  style:"Handmade & Boutique",  image:"https://images.unsplash.com/photo-1538688525198-9b88f6f53126?w=600&q=80", desc:"Artisan feel with hand-drawn elements, textured backgrounds, and story-driven product pages.",             previewUrl:"https://preview.themeforest.net/item/craftshop-handmade-shop-html-template/full_screen_preview/20553057", tags:["Artisan","Boutique","Handmade"],      badge:"Creative",    badgeColor:"bg-yellow-100 text-yellow-700" },
       { id:7, name:"Smart Room",     style:"Tech + Furniture",     image:"https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=600&q=80", desc:"Modern SaaS-inspired layout for smart home furniture with AR preview features and 3D product tours.",        previewUrl:"https://preview.themeforest.net/item/divi-the-ultimate-wordpress-theme/full_screen_preview/242431", tags:["Tech","AR/3D","Smart Home"],           badge:"Innovative",  badgeColor:"bg-blue-100 text-blue-700" },
+    ],
+  },
+
+
+  // ── BILLING ─────────────────────────────────────────────────────────────
+  billing: {
+    accent: "from-sky-400 to-blue-500", color: "text-sky-600",
+    bg: "from-sky-50 to-blue-50", icon: "🧾",
+    designs: [
+      { id:1, name:"Invoice Flow", style:"Smart Billing Dashboard", image:"assets/test10.png", desc:"Clean billing platform layout with invoice creation, payment status, tax summary, and client ledgers.", previewUrl:"https://bit-byte-billing-client.vercel.app/login", tags:["Invoices","GST","Ledger"], badge:"Most Popular", badgeColor:"bg-sky-100 text-sky-700" },
+      { id:2, name:"Retail POS", style:"Point of Sale", image:"https://images.unsplash.com/photo-1556742502-ec7c0e9f34b1?w=600&q=80", desc:"Fast retail billing interface with product lookup, barcode-ready checkout, receipts, and daily sales reports.", previewUrl:"https://preview.themeforest.net/item/vuexy-vuejs-html-laravel-admin-dashboard-template/full_screen_preview/23328599", tags:["POS","Receipts","Retail"], badge:"Trending", badgeColor:"bg-blue-100 text-blue-700" },
+      { id:3, name:"Finance Desk", style:"Accounts & Reports", image:"https://images.unsplash.com/photo-1554224154-26032ffc0d07?w=600&q=80", desc:"Report-first design for accountants with cash flow widgets, outstanding balances, and exportable statements.", previewUrl:"https://preview.themeforest.net/item/skote-html-laravel-admin-dashboard-template/full_screen_preview/25548061", tags:["Reports","Accounts","Exports"], badge:"Premium", badgeColor:"bg-indigo-100 text-indigo-700" },
+      { id:4, name:"Subscription Bill", style:"Recurring Payments", image:"https://images.unsplash.com/photo-1563013544-824ae1b704d3?w=600&q=80", desc:"SaaS billing layout with recurring plans, renewal reminders, usage charges, and payment history.", previewUrl:"https://preview.themeforest.net/item/midone-jquery-tailwindcss-html-admin-template/full_screen_preview/26366820", tags:["Recurring","Plans","History"], badge:"SaaS", badgeColor:"bg-cyan-100 text-cyan-700" },
+      { id:5, name:"Vendor Pay", style:"Purchase Billing", image:"https://images.unsplash.com/photo-1450101499163-c8848c66ca85?w=600&q=80", desc:"Vendor-focused billing system with purchase entries, due reminders, stock-linked invoices, and approvals.", previewUrl:"https://preview.themeforest.net/item/velzon-aspnet-core-admin-dashboard-template/full_screen_preview/36077495", tags:["Vendors","Purchase","Approvals"], badge:"Operations", badgeColor:"bg-emerald-100 text-emerald-700" },
+      { id:6, name:"Tax Ready", style:"Compliance Billing", image:"https://images.unsplash.com/photo-1554224154-22dec7ec8818?w=600&q=80", desc:"Compliance-ready design with tax slabs, credit notes, payment reconciliation, and audit-friendly records.", previewUrl:"https://preview.themeforest.net/item/spruha-bootstrap-admin-panel-html-dashboard-template/full_screen_preview/25756171", tags:["Tax","Audit","Credit Notes"], badge:"Trusted", badgeColor:"bg-slate-100 text-slate-700" },
+      { id:7, name:"Mobile Bills", style:"Responsive Billing App", image:"https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=600&q=80", desc:"Mobile-friendly billing experience for field teams with quick invoices, UPI payment links, and customer records.", previewUrl:"https://preview.themeforest.net/item/nobleui-html-laravel-admin-template/full_screen_preview/24675813", tags:["Mobile","UPI","Customers"], badge:"Fast", badgeColor:"bg-sky-100 text-sky-700" },
+    ],
+  },
+
+  // ── HRMS ────────────────────────────────────────────────────────────────
+  hrms: {
+    accent: "from-indigo-400 to-cyan-500", color: "text-indigo-600",
+    bg: "from-indigo-50 to-cyan-50", icon: "👥",
+    designs: [
+      { id:1, name:"HRMS", style:"Complete Employee Management", image:"assets/test10.png", desc:"A modern enterprise HR platform for employee records,role-based access, onboarding, attendance tracking,leave requests, payroll management, and organizational workflows.", previewUrl:"https://hrms-bit-byte.vercel.app/login", tags:["Employees","Payroll","Attendance"], badge:"Most Popular", badgeColor:"bg-indigo-100 text-indigo-700" },
+      { id:2, name:"Payroll Pro", style:"Payroll Dashboard", image:"https://images.unsplash.com/photo-1554224155-8d04cb21cd6c?w=600&q=80", desc:"Payroll-focused interface with salary slips, deductions, bonuses, reimbursement tracking, and monthly exports.", previewUrl:"https://preview.themeforest.net/item/hrm-human-resource-management-admin-template/full_screen_preview/28734456", tags:["Payroll","Salary","Exports"], badge:"Payroll", badgeColor:"bg-cyan-100 text-cyan-700" },
+      { id:3, name:"Attendly", style:"Attendance & Leave", image:"https://images.unsplash.com/photo-1552664730-d307ca884978?w=600&q=80", desc:"Attendance-first HRMS with check-ins, shift rosters, leave approvals, holiday calendars, and team availability.", previewUrl:"https://preview.themeforest.net/item/adminto-responsive-admin-dashboard-template/full_screen_preview/15025393", tags:["Attendance","Leave","Shifts"], badge:"Trending", badgeColor:"bg-blue-100 text-blue-700" },
+      { id:4, name:"Recruit Suite", style:"Hiring Pipeline", image:"https://images.unsplash.com/photo-1521791136064-7986c2920216?w=600&q=80", desc:"Recruitment module design with job posts, candidate stages, interview schedules, and offer workflows.", previewUrl:"https://preview.themeforest.net/item/jobick-job-admin-dashboard-bootstrap-template/full_screen_preview/32720853", tags:["Hiring","Candidates","Interviews"], badge:"Recruiting", badgeColor:"bg-violet-100 text-violet-700" },
+      { id:5, name:"Performance Grid", style:"Reviews & Goals", image:"https://images.unsplash.com/photo-1556761175-b413da4baf72?w=600&q=80", desc:"Performance review layout with OKRs, appraisal forms, manager feedback, skill matrices, and progress charts.", previewUrl:"https://preview.themeforest.net/item/minia-bootstrap-admin-dashboard-template/full_screen_preview/33496481", tags:["Reviews","OKR","Skills"], badge:"Growth", badgeColor:"bg-emerald-100 text-emerald-700" },
+      { id:6, name:"HR Analytics", style:"People Analytics", image:"https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=600&q=80", desc:"Analytics-heavy HRMS design with attrition insights, headcount charts, payroll trends, and department reports.", previewUrl:"https://preview.themeforest.net/item/sash-bootstrap-5-admin-dashboard-template/full_screen_preview/35183671", tags:["Analytics","Reports","Headcount"], badge:"Insights", badgeColor:"bg-sky-100 text-sky-700" },
+      { id:7, name:"Self Service", style:"Employee Portal", image:"https://images.unsplash.com/photo-1600880292203-757bb62b4baf?w=600&q=80", desc:"Employee self-service portal with payslips, leave requests, document downloads, policies, and support tickets.", previewUrl:"https://preview.themeforest.net/item/dashlite-bootstrap-responsive-admin-dashboard-template/full_screen_preview/25780042", tags:["Portal","Payslips","Tickets"], badge:"Self Serve", badgeColor:"bg-indigo-100 text-indigo-700" },
     ],
   },
 

@@ -129,6 +129,8 @@ export default function CTA() {
                 <option>Textile Website</option>
                 <option>Photoshop Website</option>
                 <option>Furniture Website</option>
+                <option>Billing Software Website</option>
+                <option>HRMS Website</option>
                 <option>Restaurant Website</option>
                 <option>Gym &amp; Fitness Website</option>
                 <option>Real Estate Website</option>

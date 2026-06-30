@@ -5,7 +5,7 @@ export default function Footer() {
 
   const links = {
     Services: ['Web Design', 'Web Development', 'E-Commerce', 'SEO Optimization', 'Maintenance'],
-    Designs: ['Furniture', 'Restaurant', 'Gym & Fitness', 'Real Estate', 'Interior Design'],
+    Designs: ['Textile', 'Photoshop', 'Furniture', 'Billing', 'HRMS', 'Restaurant', 'Gym & Fitness'],
     Company: ['About Us', 'Portfolio', 'Blog', 'Careers', 'Contact'],
   };
 
